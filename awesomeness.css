@@ -1,0 +1,13 @@
+@font-face 
+{
+  font-family: "Bullet";
+  src: url(fonts/Bullet.ttf) format("truetype");
+}
+h1, h2, h3, h4, h5, h6, p, li, ul
+{
+  font-family: "Bullet", sans-serif;
+}
+#grad 
+{
+  background-image: linear-gradient(to bottom, red, yellow);
+}

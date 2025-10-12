@@ -1,3 +1,9 @@
+@property --angle 
+{
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 @font-face 
 {
   font-family: "Bullet";
@@ -7,7 +13,72 @@ h1, h2, h3, h4, h5, h6, p, li, ul
 {
   font-family: "Bullet", sans-serif;
 }
-#grad 
+@keyframes rotateGradient 
 {
-  background-image: linear-gradient(to bottom, red, yellow);
+  0% { --angle: 0deg; }
+  25% { --angle: 90deg; }
+  50% { --angle: 180deg; }
+  75% { --angle: 270deg; }
+  100% { --angle: 360deg; }
+}
+.cool-gradients
+{
+  height: 100%; 
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background: 
+    radial-gradient(circle, #ffffff, #ffffff00),
+    repeating-conic-gradient(from var(--angle), 
+      #ffafaf 0deg, 
+      #ffdeaf 12deg, 
+      #ffffaf 24deg, 
+      #afffc0 36deg, 
+      #afe2ff 48deg, 
+      #ddafff 60deg, 
+      #ffafaf 72deg);
+      /*linear-gradient(var(--angle), #ffafaf, #ffdeaf, #ffffaf, #afffc0, #afe2ff, #ddafff);*/
+  animation: rotateGradient 120s linear infinite;
+}
+.cool-button
+{
+  text-decoration: none;
+  font-family: "Bullet";
+  font-size: 14px;
+  background-color: #ffffff; 
+  color: black; 
+  border: none;
+  border-radius: 30px; 
+  padding: 5px 10px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer; 
+  transition: box-shadow 0.1s linear;
+}
+.cool-button:hover 
+{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+.cool-button::before 
+{
+  background-image: url('images/link.png'); /* or use Unicode like '\1F517' for 🔗 */
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 4px;
+  vertical-align: -4px;
+}
+.under-construction 
+{
+  background: repeating-linear-gradient(
+    135deg,
+    #ffafaf,
+    #ffafaf 20px,
+    #ffffaf 20px,
+    #ffffaf 40px
+  );
+  text-align: center;
+  background-size: 200% 200%;
+  animation: cautionStripes 4s linear infinite;
 }

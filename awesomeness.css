@@ -9,9 +9,18 @@
   font-family: "Bullet";
   src: url(fonts/Bullet.ttf) format("truetype");
 }
-h1, h2, h3, h4, h5, h6, p, li, ul
+@font-face 
+{
+  font-family: "Selawik";
+  src: url(fonts/Selawik.ttf) format("truetype");
+}
+h1, h2, h3, h4, h5, h6
 {
   font-family: "Bullet", sans-serif;
+}
+p, li, ul
+{
+  font-family: "Selawik";
 }
 @keyframes rotateGradient 
 {
@@ -39,8 +48,10 @@ h1, h2, h3, h4, h5, h6, p, li, ul
       /*linear-gradient(var(--angle), #ffafaf, #ffdeaf, #ffffaf, #afffc0, #afe2ff, #ddafff);*/
   animation: rotateGradient 120s linear infinite;
 }
-.cool-button
+.cool-button,
+.cool-button-plain
 {
+  white-space: nowrap;
   text-decoration: none;
   font-family: "Bullet";
   font-size: 14px;
@@ -52,8 +63,13 @@ h1, h2, h3, h4, h5, h6, p, li, ul
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer; 
   transition: box-shadow 0.1s linear;
+  margin-bottom: 0px;
 }
 .cool-button:hover 
+{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+.cool-button-plain:hover 
 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
@@ -81,4 +97,68 @@ h1, h2, h3, h4, h5, h6, p, li, ul
   text-align: center;
   background-size: 200% 200%;
   animation: cautionStripes 4s linear infinite;
+}
+.gradient-border 
+{
+  border: 10px solid; /* Border width */
+  border-image-slice: 1;
+
+  /* Gradient for the border */
+  border-image-source: repeating-conic-gradient(from var(--angle), 
+      #ffafaf 0deg, 
+      #ffdeaf 12deg, 
+      #ffffaf 24deg, 
+      #afffc0 36deg, 
+      #afe2ff 48deg, 
+      #ddafff 60deg, 
+      #ffafaf 72deg);
+      /*linear-gradient(var(--angle), #ffafaf, #ffdeaf, #ffffaf, #afffc0, #afe2ff, #ddafff);*/
+  animation: rotateGradient 120s linear infinite;
+  overflow: hidden; /* Keep image inside rounded border */
+}
+.gradient-border img
+{
+  display: block;
+}
+img
+{
+  display: block;
+}
+hr
+{
+  color: #ffffff66;
+}
+h1 
+{ 
+  font-size: 2.5rem; 
+  margin: 15px;
+}
+h2 
+{ 
+  font-size: 2rem; 
+  margin: 15px; 
+}
+h3 
+{
+  font-size: 1.5rem; 
+  margin: 15px;
+}
+.shadow
+{
+  background: linear-gradient(90deg, #ffff00, #ff7f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: 
+    drop-shadow(0px 1px #550000)
+    drop-shadow(1px 0px #550000)
+    drop-shadow(0px -1px #550000)
+    drop-shadow(-1px 0px #550000)
+    drop-shadow(2px 2px #0000007f);
+}
+.box {display: flex; flex-direction: column;}
+.box-left {padding-right:15px;}
+@media (min-width: 1200px) 
+{ 
+  .box { flex-direction: row; } 
+  .box-left {flex: 0 650px}
 }

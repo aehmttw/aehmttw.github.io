@@ -3,47 +3,79 @@
   <head>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="awesomeness.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Matei Budiu</title>
   </head>
   <body style="background-color: #fff9cc;" class="cool-gradients">
-    <div style="display: flex; align-items: center;">
-      <div class="box-left">
+    <div style="display: flex;" class="box-about-me">
+      <div class="box-about-me-left">
         <div style="display: flex; align-items: center" >
-          <img src="images/favicon.png" width=48px height=48px style="padding-right: 5px; padding-left: 15px;" />
-          <h1 class="shadow"> Matei Budiu </h1>
+          <img class="shadow" src="images/favicon.png" width=48px height=48px style="padding-right: 5px; padding-left: 15px;" />
+          <h1 class="shadow-title"> Matei Budiu </h1>
         </div>
-        <h2> About me: </h3>
-          <ul>
-            <li> Computer Science PhD Student at University of Illinois at Urbana-Champaign (As of Aug 2025) </li>
-            <li> Currently doing research in Compilers for ML
-            <li> Generally interested in parallel systems, compilers, and graphics </li>
-            <li> Graduated from Carnegie-Mellon University in May 2025 </li>
-            <li> Interested in game development as a hobby </li>
-            <li> Not much of a web developer, as you can see here </li>
-          </ul>
+        <h2 class="shadow-header">About me:</h2>
+        <ul>
+          <li> Computer Science PhD Student at University of Illinois at Urbana-Champaign (As of Aug 2025) </li>
+          <li> Advised by <a href="https://misailo.cs.illinois.edu/"> Prof. Sasa Misailovic </a> </li>
+          <li> Currently doing research in compilers for machine learning </li>
+          <li> Generally interested in parallel systems, compilers, and graphics </li>
+          <li> Graduated from Carnegie-Mellon University in May 2025 </li>
+          <li> Interested in game development as a hobby </li>
+          <li> Not much of a web developer, as you can see here </li>
+        </ul>
       </div>
       <div class="gradient-border">
         <img src="images/matei.png", height=250px>
       </div>
     </div>
     <hr>
-    <h2> My personal projects: </h3>
+    <h2 class="shadow-header"> My research: </h2>
+      <hr>
+      <div style="display: flex; margin-bottom: 0px" class="box-paper">
+        <div class="box-paper-left">
+          <div class="paper-title">Nautilus: An Auto-Scheduling Tensor Compiler for Efficient Tiled GPU Kernels</div>
+          <div class="paper-authors">Yifan Zhao, Yuchen Yang, <div class="me">Matei Budiu</div>, Sasa Misailovic</div>
+        </div>
+        <div style="align-items: start; padding-top: 5px; padding-left: 15px; margin-bottom: 0px; min-width: 200px;", class="box-paper-right">
+          <div class="dates" style="margin: 5px;">(Fall 2025-Spring 2026, UIUC)</div>
+          <div class="dates" style="margin: 5px;"><a href=https://arxiv.org/abs/2604.14825 class="cool-button">arXiv</a> </div>
+        </div>
+      </div>
+      <ul style="margin-top:0px">
+        <li>In review</li>
+        <li>Created an "auto-scheduler" which places novel loop fusion transformations to perform operator fusion in the <a href=https://arxiv.org/abs/2510.08726>Neptune tensor compiler</a></li>
+      </ul>
+      <hr>
+      <div style="display: flex; margin-bottom: 0px", class="box-paper">
+        <div class="box-paper-left">
+          <div class="paper-title">DBSP: Automatic Incremental View Maintenance for Rich Query Languages</div>
+          <div class="paper-authors">Mihai Budiu, Leonid Ryzhyk, Gerd Zellweger, Ben Pfaff, Lalith Suresh, Simon Kassing, Abhinav Gyawali, <div class="me">Matei Budiu</div>, Tej Chajed, Frank McSherry, Val Tannen</div>
+        </div>
+        <div style="align-items: start; padding-top: 5px; padding-left: 15px; margin-bottom: 0px; min-width: 200px;", class="box-paper-right">
+          <div class="dates" style="margin: 5px;">(Summer 2024, Feldera)</div>
+          <div class="dates" style="margin: 5px;">
+          <a href=https://doi.org/10.1007/s00778-025-00922-y class="cool-button">Link</a> </div>
+        </div>
+      </div>
+      <ul style="margin-top:0px">
+        <li>Published in The VLDB Journal</li>
+        <li>A database system modeled off the idea of streams which uses incremental computation</li>
+        <li>I worked on creating a modular system that automatically collects and graphs metrics to compare the Feldera platform with similar streaming systems and databases </li>
+        <li>I conducted a literature review of existing benchmarks for streaming systems and implemented and tested these benchmarks in the Feldera platform</li>
+      </ul>
+    <hr>
+    <h2 class="shadow-header"> My personal projects: </h3>
       <hr>
       <div class="box">
         <div class="box-left">
           <div style="display: flex;">
             <img src="images/tanks/tanks_title.png", height=50px, style="padding-right: 20px;">
             <div style="align-items: start;">
-              <h4 style="margin: 5px;">(2018–present)</h4>
-              <h4 style="margin: 5px;">
+              <div class="dates" style="margin: 5px;">(2018–present)</div>
+              <div class="dates" style="margin: 5px;">
                 <a href=https://store.steampowered.com/app/1660910/Tanks_The_Crusades/ class="cool-button">Steam</a> 
                 <a href=https://apps.apple.com/us/app/tanks-the-crusades/id1508772262 class="cool-button">iOS</a>
                 <a href=https://github.com/aehmttw/Tanks class="cool-button">GitHub</a> 
-              </h4>
-
+              </div>
             </div>  
           </div>
           <ul>
@@ -72,9 +104,9 @@
             <div style="display: flex; margin-bottom: 0px">
               <h2>Machimania</h1>
               <div style="align-items: start; padding-top: 15px; padding-left: 15px; margin-bottom: 0px;">
-                <h4 style="margin: 5px;">(~2021–present)</h4>
-                <h4 style="margin: 5px;">
-                <a href=https://github.com/aehmttw/Machimania class="cool-button">GitHub</a> </h4>
+                <div class="dates" style="margin: 5px;">(~2021–present)</div>
+                <div class="dates" style="margin: 5px;">
+                <a href=https://github.com/aehmttw/Machimania class="cool-button">GitHub</a> </div>
               </div>
             </div>
             <ul style="margin-top: 0px;">
@@ -93,19 +125,15 @@
           </div>
         </div>
       </div>
-
-      
-
-      
       <hr>
       <div class="box">
         <div class="box-left">
           <div style="display: flex; padding-top: 20px;">
             <img src="images/manhunt/manhunt_title.png", height=50px, style="padding-right: 20px;">
             <div style="align-items: start;">
-              <h4 style="margin: 5px;">(Fall 2021, CMU Game Creation Society)</h4>
-              <h4 style="margin: 5px;">
-              <a href=https://www.gamecreation.org/games/manhunt class="cool-button">GCS Webpage</a> <a href=https://github.com/GCS-manhunt class="cool-button">GitHub</a> </h4>
+              <div class="dates" style="margin: 5px;">(Fall 2021, CMU Game Creation Society)</div>
+              <div class="dates" style="margin: 5px;">
+              <a href=https://www.gamecreation.org/games/manhunt class="cool-button">GCS Webpage</a> <a href=https://github.com/GCS-manhunt class="cool-button">GitHub</a> </div>
             </div>  
           </div>
           

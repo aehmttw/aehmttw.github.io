@@ -4,6 +4,18 @@
   inherits: false;
   initial-value: 0deg;
 }
+@property --fade 
+{
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --fade2 
+{
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
 @font-face 
 {
   font-family: "Bullet";
@@ -30,12 +42,19 @@ p, li, ul
   75% { --angle: 270deg; }
   100% { --angle: 360deg; }
 }
+@keyframes fadeIn 
+{
+  0% { --fade: 0%; --fade2: 0%; }
+  100% { --fade: 100%; --fade2: 200%; }
+}
 .cool-gradients
 {
+  opacity: var(--fade);
   height: 100%; 
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
   background: 
+    radial-gradient(circle, #ffffff00, #ffffff00 var(--fade), #ffffff var(--fade2)),
     radial-gradient(circle, #ffffff, #ffffff00),
     repeating-conic-gradient(from var(--angle), 
       #ffafaf 0deg, 
@@ -46,7 +65,9 @@ p, li, ul
       #ddafff 60deg, 
       #ffafaf 72deg);
       /*linear-gradient(var(--angle), #ffafaf, #ffdeaf, #ffffaf, #afffc0, #afe2ff, #ddafff);*/
-  animation: rotateGradient 120s linear infinite;
+  animation: 
+    rotateGradient 120s linear infinite,
+    fadeIn 0.75s ease-out forwards;  
 }
 .cool-button,
 .cool-button-plain
@@ -114,7 +135,7 @@ p, li, ul
       #ddafff 60deg, 
       #ffafaf 72deg);
       /*linear-gradient(var(--angle), #ffafaf, #ffdeaf, #ffffaf, #afffc0, #afe2ff, #ddafff);*/
-  animation: rotateGradient 120s linear infinite;
+  animation: rotateGradient 60s linear infinite;
   overflow: hidden; 
 }
 .gradient-border img
@@ -133,21 +154,25 @@ h1
 { 
   font-size: 2.5rem; 
   margin: 15px;
+  font-weight: normal;
 }
 h2 
 { 
   font-size: 2rem; 
   margin: 15px; 
+  font-weight: normal;
 }
 h3 
 {
   font-size: 1.5rem; 
   margin: 15px;
+  font-weight: normal;
 }
 h4 
 {
   font-size: 1rem; 
   margin: 15px;
+  font-weight: normal;
 }
 .paper-title
 {
@@ -215,7 +240,35 @@ h4
 .box-paper-right {flex-direction: row; padding-bottom: 16px}
 .box-about-me {display: flex; flex-direction: column; align-items: first baseline;}
 .box-about-me-left {padding-right:15px; }
-
+.manhunt-title 
+{
+  margin-bottom: -7px; 
+  margin-top: 0px; 
+  font-size: 1.7rem;
+  color: #ff0000;
+  margin-left: 0px;
+  filter: 
+    drop-shadow(1px 1px #0000007f);
+}
+.tanks-title 
+{
+  margin-bottom: -7px; 
+  margin-top: -7px; 
+  font-size: 2.5rem;
+  color: rgb(0, 150, 255);
+  margin-left: 0px;
+  filter: 
+    drop-shadow(2px 2px rgb(32, 107, 159));
+}
+.tanks-subtitle 
+{
+  margin-top: -7px; 
+  font-size: 1rem;
+  color: rgb(32, 107, 159);
+  margin-left: 3px;
+  filter: 
+    drop-shadow(0.66px 0.66px #000000);
+}
 @media (min-width: 1200px) 
 { 
   .box { flex-direction: row; } 
